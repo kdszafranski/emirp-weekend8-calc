@@ -7,6 +7,8 @@ const bodyParser = require('body-parser');
 app.use(express.static('server/public'));
 app.use(bodyParser.urlencoded({ extended: true}));
 
+// global array
+let history = [];
 
 function calculate(calcDetails) {
     // make calculation
@@ -26,7 +28,9 @@ function calculate(calcDetails) {
     }
 
     // store calculation
-    console.log('calculation complete: ', calcDetails);
+    history.push(calcDetails);
+
+    console.log('full history: ', history);
 
 }
 
@@ -35,10 +39,11 @@ function calculate(calcDetails) {
 app.post('/calculate', (req, res) => {
     console.log('in POST:', req.body);
 
+    // make calcluation and store it
     calculate(req.body);
 
     // respond!
-    res.sendStatus(200); // everything's cool   
+    res.sendStatus(201); // everything's cool   
 });
 
 app.listen(PORT, ()=> {

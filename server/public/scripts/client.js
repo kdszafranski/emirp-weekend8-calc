@@ -34,7 +34,14 @@ function getHistory() {
 
 // update just the answer span
 function renderAnswer(answer) {
-    $('#answer').text(answer.answer);
+    // only try to use if there is a newest answer
+    console.log(answer);
+
+    // if the answer is truthy, show it
+    if(answer) {
+        $('#answer').text(answer.answer);
+    }
+    
 }
 
 // displays entire history

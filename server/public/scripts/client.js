@@ -21,6 +21,9 @@ function getHistory() {
         // answer is the last index of the array
         renderAnswer( response[response.length - 1] );
 
+        // display all the history
+        renderHistory(response);
+
     })
     .catch( function(error) {
         console.log('error on GET: ', error);            
@@ -32,8 +35,17 @@ function renderAnswer(answer) {
     $('#answer').text(answer.answer);
 }
 
-function renderHistory() {
+function renderHistory(history) {
+    // wipe the dom
+    $('#historyList').empty();
 
+    // append on the dom in a loop
+    for(let calc of history) {
+        // prepend = last if first, etc
+        $('#historyList').prepend(`
+            <li>${calc.xInput} ${calc.operator} ${calc.yInput} = ${calc.answer}</li>
+        `);
+    }
 }
 
 

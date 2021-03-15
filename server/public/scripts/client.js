@@ -23,5 +23,17 @@ function submitCalculation( ){
     console.log('new calc: ', newCalculation);
 
     // send to the server
+    $.ajax({
+        type: 'POST',
+        url: '/calculate',
+        data: newCalculation,
+    })
+        .then( function(response) {
+            console.log('everything is fine.');
+        })
+        .catch( function(error) {
+            console.log('error on POST: ', error);
+            
+        })
     
 }

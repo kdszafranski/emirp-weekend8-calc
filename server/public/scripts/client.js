@@ -26,7 +26,7 @@ function submitCalculation( ){
     $.ajax({
         type: 'POST',
         url: '/calculate',
-        data: newCalculation,
+        data: newCalculation, // becomes req.body on the server
     })
         .then( function(response) {
             console.log('everything is fine.');

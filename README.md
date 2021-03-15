@@ -12,6 +12,8 @@ Client (in the browser)
 - allow a user to clear the inputs
 - jQuery
 
+
+
 Server
 
 http://localhost:5000

@@ -1,6 +1,6 @@
 # TODO
 
-Client
+Client (in the browser)
 
 - allow a user to enter some numbers
 - allow a user to choose an operator

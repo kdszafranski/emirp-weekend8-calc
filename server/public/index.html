@@ -9,7 +9,7 @@
 
     <script src="vendor/jquery.min.js"></script>
     <script src="scripts/client.js"></script>
-    
+
     <title>Calculatin'</title>
 </head>
 <body>
@@ -17,7 +17,20 @@
 
     <main>
         <!-- inputs -->
+        <input type="text" name="xInput" id="xInput" />
+        
+        <!-- operator choice dropdown menu -->
+        <select name="operator" id="operator">
+            <option value="+" selected>+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+
+        <input type="text" name="yInput" id="yInput" />
         <!-- =/submit button -->
+        <button id="submitCalculation">=</button>
+        <button id="clearInputs">C</button>
     </main>
     
 </body>

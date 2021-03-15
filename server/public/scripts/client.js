@@ -5,8 +5,10 @@ function start() {
     console.log('DOM is ready');
     // event listeners, event handlers (the function called)
     $('#submitCalculation').on('click', submitCalculation);
+    $('#clearInputs').on('click', clearInputs);
 
     getHistory();
+    focusInput();
 }
 
 
@@ -35,6 +37,7 @@ function renderAnswer(answer) {
     $('#answer').text(answer.answer);
 }
 
+// displays entire history
 function renderHistory(history) {
     // wipe the dom
     $('#historyList').empty();
@@ -77,4 +80,18 @@ function submitCalculation( ){
         console.log('error on POST: ', error);            
     })
     
+}
+
+function clearInputs() {
+    // clear the inputs
+    $('input').val('');
+    // clear select
+    $('#operator').prop('selectedIndex', 0);
+
+    // focus
+    focusInput();
+}
+
+function focusInput() {
+    $('#xInput').focus();
 }

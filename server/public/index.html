@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,26 +13,41 @@
 
     <title>Calculatin'</title>
 </head>
+
 <body>
     <h1>Calculatin'</h1>
 
     <main>
-        <!-- inputs -->
-        <input type="text" name="xInput" id="xInput" />
-        
-        <!-- operator choice dropdown menu -->
-        <select name="operator" id="operator">
-            <option value="+" selected>+</option>
-            <option value="-">-</option>
-            <option value="*">*</option>
-            <option value="/">/</option>
-        </select>
+        <section>
+            <!-- inputs -->
+            <input type="text" name="xInput" id="xInput" />
 
-        <input type="text" name="yInput" id="yInput" />
-        <!-- =/submit button -->
-        <button id="submitCalculation">=</button>
-        <button id="clearInputs">C</button>
+            <!-- operator choice dropdown menu -->
+            <select name="operator" id="operator">
+                <option value="+" selected>+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+
+            <input type="text" name="yInput" id="yInput" />
+            <!-- =/submit button -->
+            <button id="submitCalculation">=</button>
+            <button id="clearInputs">C</button>
+        </section>
+
+        <section>
+            <h2>Answer: <span id="answer"></span></h2>
+        </section>
+
+        <section>
+            <h2>Calculatin' History</h2>
+            <ul id="historyList">
+                <!-- will append here -->
+            </ul>
+        </section>
     </main>
-    
+
 </body>
+
 </html>

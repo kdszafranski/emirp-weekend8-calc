@@ -46,6 +46,12 @@ app.post('/calculate', (req, res) => {
     res.sendStatus(201); // everything's cool   
 });
 
+// get history
+app.get('/history', (req, res) => {
+    // respond with the array
+    res.send(history);
+});
+
 app.listen(PORT, ()=> {
     console.log('hey, ready on port: ', PORT);
 });

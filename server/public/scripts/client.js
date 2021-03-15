@@ -59,6 +59,7 @@ function submitCalculation( ){
     })
     .then( function(response) {
         console.log('everything is fine.');
+        getHistory(); // refresh my history data
     })
     .catch( function(error) {
         console.log('error on POST: ', error);            

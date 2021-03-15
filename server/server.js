@@ -17,10 +17,17 @@ app.post('/calculate', (req, res) => {
     console.log('in POST:', req.body);
 
     // make calcluation and store it
-    calculator.calculate(req.body);
+    if(calculator.calculate(req.body)) {
+        // true
+        // respond!
+        res.sendStatus(201); // everything's cool   
+    } else {
+        // bad
+        res.sendStatus(400); // bad request
+    }
+    
 
-    // respond!
-    res.sendStatus(201); // everything's cool   
+    
 });
 
 // get history

@@ -1,8 +1,7 @@
 let history = [];
 
+// make calculation
 function calculate(calcDetails) {
-    // make calculation
-    
     // if/if else/else chain
     switch(calcDetails.operator) {
         case '+': 
@@ -17,10 +16,21 @@ function calculate(calcDetails) {
             break;        
     }
 
-    // store calculation
-    history.push(calcDetails);
+    console.log('this had NaN!', calcDetails);
 
-    console.log('full history: ', history);
+    // store calculation only if it is a number
+    if(isNaN(calcDetails.answer)) {      
+        // Not a Number  
+        return false;
+    } else {
+        // is a number!
+        history.push(calcDetails);
+        console.log('full history: ', history);
+
+        return true;
+    }
+    
+    
 }
 
 // require <=> export

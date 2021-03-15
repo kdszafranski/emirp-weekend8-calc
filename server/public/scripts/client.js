@@ -84,7 +84,9 @@ function submitCalculation( ){
         getHistory(); // refresh my history data
     })
     .catch( function(error) {
-        console.log('error on POST: ', error);            
+        console.log('error on POST: ', error);
+        // tell the user
+        alert('hey, i need 2 numbers!');
     })
     
 }
